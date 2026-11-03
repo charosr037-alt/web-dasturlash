@@ -1,73 +1,115 @@
-* {
+*, *::before, *::after {
     box-sizing: border-box;
+}
+
+:root {
+    --fon: #fff8ed;
+    --matn: #292524;
+    --asosiy: #1f3a5f;
+    --aksent: #d97706;
+    --aksent-toq: #b45309;
+    --sariq: #fbbf24;
+    --kul: #57534e;
+    --karta-fon: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    background-color: #fff8ed;
-    color: #292524;
+    background-color: var(--fon);
+    color: var(--matn);
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 16px;
     line-height: 1.7;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ---------- Sarlavha va menyu (sticky + Flexbox) ---------- */
 header {
-    background-color: #1f3a5f;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--asosiy);
     color: white;
-    padding: 18px 8%;
+    padding: 12px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
 .belgi {
+    margin: 0;
     font-size: 1.35rem;
     font-weight: 800;
     letter-spacing: 3px;
-    text-align: center;
     color: white;
 }
 
 nav ul {
+    display: flex;
+    gap: 22px;
     list-style: none;
+    margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 nav li {
-    display: inline-block;
-    margin: 0 12px;
+    margin: 0;
 }
 
 nav a {
     color: white;
     font-weight: 700;
     text-decoration: none;
+    padding: 6px 2px;
+}
+
+nav a:visited {
+    color: white;
 }
 
 nav a:hover {
-    color: #fbbf24;
+    color: var(--sariq);
     text-decoration: underline;
 }
 
-/* Asosiy matn va sarlavhalar */
+nav a[aria-current="page"] {
+    color: var(--sariq);
+    border-bottom: 2px solid var(--sariq);
+}
+
+/* ---------- Konteyner va sarlavhalar ---------- */
 main {
-    max-width: 950px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 28px 22px;
 }
 
 h1 {
-    color: #1f3a5f;
+    color: var(--asosiy);
     font-size: 2.2rem;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin: 12px 0;
 }
 
 h2, h3 {
-    color: #b45309;
+    color: var(--aksent-toq);
 }
 
 h2 {
-    border-bottom: 2px solid #d97706;
+    border-bottom: 2px solid var(--aksent);
     padding-bottom: 5px;
 }
 
@@ -75,30 +117,12 @@ p {
     margin: 12px 0;
 }
 
-.kirish {
-    background-color: rgba(217, 119, 6, 0.08);
-    padding: 18px;
-}
-
-.izoh {
-    font-style: italic;
-    color: #57534e;
-}
-
-blockquote {
-    border-left: 4px solid #d97706;
-    margin: 20px 0;
-    padding: 10px 18px;
-    font-style: italic;
-    color: #1f3a5f;
-}
-
 li {
     margin: 5px 0;
 }
 
 a {
-    color: #1f3a5f;
+    color: var(--asosiy);
     text-decoration: underline;
 }
 
@@ -107,33 +131,301 @@ a:visited {
 }
 
 a:hover {
-    color: #d97706;
+    color: var(--aksent);
 }
 
-dt {
-    color: #1f3a5f;
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--sariq);
+    outline-offset: 2px;
+}
+
+.izoh {
+    font-style: italic;
+    color: var(--kul);
+}
+
+blockquote {
+    border-left: 4px solid var(--aksent);
+    margin: 20px 0;
+    padding: 10px 18px;
+    font-style: italic;
+    color: var(--asosiy);
+}
+
+/* ---------- Kirish bo'limi va markazlash ---------- */
+.kirish {
+    background-color: rgba(217, 119, 6, 0.08);
+    padding: 18px 24px;
+    border-radius: 10px;
+}
+
+.markaz-quti {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+    background-color: var(--asosiy);
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.markaz-quti h1 {
+    color: white;
+    margin: 0;
+    padding: 16px;
+}
+
+/* ---------- Kartalar (Flexbox + wrap) ---------- */
+.kartalar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.karta {
+    position: relative;
+    flex: 1 1 280px;
+    background-color: var(--karta-fon);
+    border: 1px solid #e7d5b8;
+    border-radius: 12px;
+    padding: 16px 24px;
+    margin: 8px 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.karta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(31, 58, 95, 0.18);
+}
+
+.karta h3 {
+    margin: 12px 0 6px;
+}
+
+.karta figure {
+    margin: 0;
+}
+
+.karta img {
+    border-radius: 8px;
+}
+
+figcaption {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--kul);
+    margin-top: 6px;
+}
+
+/* Kartadagi belgi (absolute) */
+.belgi-yangi {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--aksent);
+    color: white;
+    font-size: 0.85rem;
     font-weight: 700;
-    margin-top: 10px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    z-index: 1;
 }
 
-dd {
-    margin-left: 20px;
+.belgi-yangi.chegirma {
+    background-color: #b91c1c;
 }
 
-#aloqa {
-    border-top: 2px solid #d97706;
-    margin-top: 25px;
-    padding-top: 12px;
+/* ---------- Asosiy qism + aside ---------- */
+.asosiy-qism {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 24px;
 }
 
-/* Ekran kichik bo'lsa navigatsiya satrma-satr ko'rinadi */
+.asosiy-qism > article {
+    flex: 2 1 400px;
+}
+
+.asosiy-qism > aside {
+    flex: 1 1 240px;
+    background-color: rgba(31, 58, 95, 0.07);
+    border-left: 4px solid var(--asosiy);
+    border-radius: 8px;
+    padding: 12px 20px;
+    align-self: flex-start;
+}
+
+/* ---------- Jadval ---------- */
+.jadval-orami {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--karta-fon);
+}
+
+caption {
+    caption-side: top;
+    text-align: left;
+    font-weight: 700;
+    color: var(--asosiy);
+    padding: 8px 0;
+}
+
+th, td {
+    border: 1px solid #e7d5b8;
+    padding: 10px 14px;
+    text-align: left;
+}
+
+thead th {
+    background-color: var(--asosiy);
+    color: white;
+}
+
+tbody th {
+    background-color: rgba(217, 119, 6, 0.12);
+    color: var(--aksent-toq);
+    vertical-align: top;
+}
+
+tbody tr:hover td {
+    background-color: rgba(251, 191, 36, 0.18);
+}
+
+tfoot td {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--kul);
+}
+
+/* ---------- Forma (Flexbox column) ---------- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: var(--karta-fon);
+    border: 1px solid #e7d5b8;
+    border-radius: 12px;
+    padding: 20px 24px;
+}
+
+.maydon {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-weight: 700;
+    color: var(--asosiy);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    font: inherit;
+    padding: 10px 12px;
+    border: 1px solid #c9b48f;
+    border-radius: 8px;
+    background-color: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--aksent);
+}
+
+fieldset {
+    border: 1px solid #c9b48f;
+    border-radius: 8px;
+    padding: 10px 16px;
+}
+
+legend {
+    font-weight: 700;
+    color: var(--asosiy);
+    padding: 0 8px;
+}
+
+.radio-qator {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+}
+
+.radio-qator label,
+.belgi-qator label {
+    font-weight: 400;
+    color: var(--matn);
+}
+
+.belgi-qator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button {
+    font: inherit;
+    font-weight: 700;
+    background-color: var(--aksent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--aksent-toq);
+}
+
+.mualliflik {
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+    margin-top: 16px;
+}
+
+
+/* ---------- Mobil ko'rinish ---------- */
 @media (max-width: 600px) {
-    nav li {
-        display: block;
-        margin: 8px 0;
+    header {
+        padding: 10px 5%;
+        justify-content: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 16px;
     }
 
     h1 {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
+    }
+
+    main {
+        padding: 20px 14px;
+    }
+
+    form {
+        padding: 16px;
     }
 }

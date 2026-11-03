@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Zarafshon kafe | Aloqa va stol band qilish</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body id="yuqori">
+    <header>
+        <p class="belgi">ZARAFSHON KAFE</p>
+        <nav aria-label="Asosiy navigatsiya">
+            <ul>
+                <li><a href="index2.html">Bosh sahifa</a></li>
+                <li><a href="batafsil2.html">Menyu va xizmatlar</a></li>
+                <li><a href="aloqa.html" aria-current="page">Aloqa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Aloqa va stol band qilish</h1>
+        </section>
+
+        <section class="asosiy-qism">
+            <article>
+                <h2>Stol band qilish formasi</h2>
+                <form action="#" method="post">
+                    <div class="maydon">
+                        <label for="ism">Ism-familiya</label>
+                        <input type="text" id="ism" name="ism" required>
+                    </div>
+
+                    <div class="maydon">
+                        <label for="email">Elektron pochta</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="maydon">
+                        <label for="telefon">Telefon raqam</label>
+                        <input type="tel" id="telefon" name="telefon" required>
+                    </div>
+
+                    <div class="maydon">
+                        <label for="sana">Kelish sanasi</label>
+                        <input type="date" id="sana" name="sana" required>
+                    </div>
+
+                    <div class="maydon">
+                        <label for="soni">Mehmonlar soni</label>
+                        <input type="number" id="soni" name="soni" min="1" max="40" value="2">
+                    </div>
+
+                    <div class="maydon">
+                        <label for="zal">Zal turi</label>
+                        <select id="zal" name="zal">
+                            <option value="umumiy">Umumiy zal</option>
+                            <option value="oilaviy">Oilaviy xona</option>
+                            <option value="ochiq">Ochiq maydon</option>
+                        </select>
+                    </div>
+
+                    <fieldset>
+                        <legend>Qaysi vaqtga?</legend>
+                        <div class="radio-qator">
+                            <label for="vaqt-tush"><input type="radio" id="vaqt-tush" name="vaqt" value="tush" checked> Tushlik (12:00–15:00)</label>
+                            <label for="vaqt-kech"><input type="radio" id="vaqt-kech" name="vaqt" value="kechki"> Kechki (18:00–22:00)</label>
+                        </div>
+                    </fieldset>
+                    <button type="submit">Band qilish</button>
+                </form>
+            </article>
+        </section>
+    </main>
+
+</body>
+</html>

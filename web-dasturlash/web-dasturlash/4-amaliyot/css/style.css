@@ -1,0 +1,569 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --fon: #fff8ed;
+    --matn: #292524;
+    --asosiy: #1f3a5f;
+    --aksent: #d97706;
+    --aksent-toq: #b45309;
+    --sariq: #fbbf24;
+    --kul: #57534e;
+    --karta-fon: #ffffff;
+    --chegara: #e7d5b8;
+    --xato: #b91c1c;
+    --muvaffaqiyat: #15803d;
+}
+
+body.tungi-rejim {
+    --fon: #111827;
+    --matn: #f3f4f6;
+    --asosiy: #60a5fa;
+    --aksent: #f59e0b;
+    --aksent-toq: #fbbf24;
+    --sariq: #fde047;
+    --kul: #d1d5db;
+    --karta-fon: #1f2937;
+    --chegara: #374151;
+    --xato: #f87171;
+    --muvaffaqiyat: #4ade80;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--fon);
+    color: var(--matn);
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ---------- Header ---------- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #1f3a5f;
+    color: white;
+    padding: 12px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.belgi {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: white;
+}
+
+.header-boshqaruv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tungi-rejim-btn,
+.sevimli-badge,
+.burger-btn {
+    padding: 6px 12px;
+    border: 1px solid var(--sariq);
+    border-radius: 8px;
+    background-color: transparent;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.tungi-rejim-btn:hover,
+.sevimli-badge:hover,
+.burger-btn:hover {
+    background-color: var(--sariq);
+    color: #1f3a5f;
+}
+
+.burger-btn {
+    display: none;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+nav ul {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a,
+nav a:visited {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 6px 2px;
+}
+
+nav a:hover {
+    color: var(--sariq);
+    text-decoration: underline;
+}
+
+nav a[aria-current="page"] {
+    color: var(--sariq);
+    border-bottom: 2px solid var(--sariq);
+}
+
+/* ---------- Asosiy kontent ---------- */
+main {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 28px 22px 48px;
+}
+
+section {
+    margin-bottom: 32px;
+}
+
+h1 {
+    color: var(--asosiy);
+    font-size: 2.1rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 12px 0;
+}
+
+h2, h3 {
+    color: var(--aksent-toq);
+}
+
+h2 {
+    border-bottom: 2px solid var(--aksent);
+    padding-bottom: 5px;
+}
+
+a {
+    color: var(--asosiy);
+}
+
+a:hover {
+    color: var(--aksent);
+}
+
+.izoh {
+    font-style: italic;
+    color: var(--kul);
+}
+
+blockquote {
+    border-left: 4px solid var(--aksent);
+    margin: 20px 0;
+    padding: 10px 18px;
+    font-style: italic;
+    color: var(--asosiy);
+}
+
+.kirish {
+    background-color: rgba(217, 119, 6, 0.1);
+    padding: 18px 24px;
+    border-radius: 10px;
+}
+
+/* ---------- Statistika ---------- */
+.statistika-qator {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.stat-quti {
+    background-color: var(--karta-fon);
+    border: 1px solid var(--chegara);
+    border-left: 4px solid var(--aksent);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stat-quti span {
+    font-size: 0.9rem;
+    color: var(--kul);
+}
+
+.stat-quti strong {
+    font-size: 1.25rem;
+    color: var(--asosiy);
+}
+
+/* ---------- Filtr boshqaruvi ---------- */
+.filtr-boshqaruv {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    background-color: var(--karta-fon);
+    border: 1px solid var(--chegara);
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.filtr-checkbox {
+    grid-column: 1 / -1;
+}
+
+.natija-hisob {
+    margin: 14px 0 8px;
+    font-weight: 600;
+}
+
+.bosh-xabar {
+    padding: 18px;
+    text-align: center;
+    font-weight: 700;
+    border: 1px dashed var(--aksent);
+    border-radius: 10px;
+    background-color: var(--karta-fon);
+}
+
+/* ---------- Kartalar ---------- */
+.kartalar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.karta {
+    position: relative;
+    background-color: var(--karta-fon);
+    border: 1px solid var(--chegara);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.karta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(31, 58, 95, 0.18);
+}
+
+.karta-rasm {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.karta h3 {
+    margin: 6px 0 0;
+}
+
+.karta-kategoriya {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--asosiy);
+}
+
+.karta-tavsif {
+    margin: 0;
+    font-size: 0.94rem;
+    flex: 1;
+}
+
+.teglar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.teg {
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background-color: rgba(217, 119, 6, 0.15);
+    color: var(--aksent-toq);
+}
+
+.karta-narx {
+    margin: 4px 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--aksent-toq);
+}
+
+.karta-tugmalar {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.belgi-yangi {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background-color: #15803d;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.belgi-yangi.chegirma {
+    background-color: #b91c1c;
+}
+
+/* ---------- Forma va tugmalar ---------- */
+.asosiy-qism {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.asosiy-qism > article {
+    flex: 2 1 420px;
+}
+
+.asosiy-qism > aside {
+    flex: 1 1 240px;
+    background-color: var(--karta-fon);
+    border: 1px solid var(--chegara);
+    border-left: 4px solid var(--asosiy);
+    border-radius: 8px;
+    padding: 14px 20px;
+    align-self: flex-start;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background-color: var(--karta-fon);
+    border: 1px solid var(--chegara);
+    border-radius: 12px;
+    padding: 20px 24px;
+}
+
+.maydon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label, legend {
+    font-weight: 700;
+    color: var(--asosiy);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    font: inherit;
+    padding: 10px 12px;
+    border: 1px solid #c9b48f;
+    border-radius: 8px;
+    background-color: var(--fon);
+    color: var(--matn);
+}
+
+.xato-input {
+    border-color: var(--xato) !important;
+}
+
+.xato-matn {
+    min-height: 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--xato);
+}
+
+.muvaffaqiyat-matn {
+    margin: 0;
+    font-weight: 700;
+    color: var(--muvaffaqiyat);
+}
+
+fieldset {
+    border: 1px solid #c9b48f;
+    border-radius: 8px;
+    padding: 10px 16px;
+}
+
+.radio-qator {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+}
+
+.radio-qator label,
+.belgi-qator label {
+    font-weight: 400;
+    color: var(--matn);
+}
+
+.belgi-qator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button,
+.btn-asosiy,
+.btn-ikkinchi {
+    font: inherit;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+button,
+.btn-asosiy {
+    background-color: var(--aksent);
+    color: white;
+    border: none;
+}
+
+button:hover,
+.btn-asosiy:hover {
+    background-color: var(--aksent-toq);
+}
+
+.btn-ikkinchi {
+    background-color: transparent;
+    color: var(--asosiy);
+    border: 1px solid var(--asosiy);
+}
+
+.btn-ikkinchi:hover {
+    background-color: var(--asosiy);
+    color: white;
+}
+
+/* ---------- Modal oyna ---------- */
+.modal-fon {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 1000;
+}
+
+.modal-fon.ochiq {
+    display: flex;
+}
+
+.modal-oyna {
+    position: relative;
+    max-width: 540px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: var(--karta-fon);
+    color: var(--matn);
+    border: 2px solid var(--aksent);
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.modal-yopish {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.modal-rasm {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+/* ---------- Mobil ko'rinish ---------- */
+@media (max-width: 820px) {
+    .statistika-qator,
+    .filtr-boshqaruv,
+    .kartalar {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        padding: 12px 5%;
+    }
+
+    .burger-btn {
+        display: inline-block;
+    }
+
+    nav#asosiy-nav {
+        display: none;
+        width: 100%;
+    }
+
+    nav#asosiy-nav.ochiq {
+        display: block;
+    }
+
+    nav#asosiy-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding-top: 8px;
+    }
+
+    h1 {
+        font-size: 1.55rem;
+    }
+
+    .statistika-qator,
+    .filtr-boshqaruv,
+    .kartalar {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zarafshon kafe | Aloqa va stol band qilish</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="yuqori">
+    <header>
+        <p class="belgi">ZARAFSHON KAFE</p>
+        <div class="header-boshqaruv">
+            <button type="button" class="tungi-rejim-btn" aria-pressed="false">Tungi rejim</button>
+            <a href="katalog.html" class="sevimli-badge">Sevimlilar: <span class="sevimli-soni">0</span></a>
+            <button type="button" id="burger-btn" class="burger-btn" aria-label="Menyuni ochish" aria-expanded="false">☰</button>
+        </div>
+        <nav id="asosiy-nav" aria-label="Asosiy navigatsiya">
+            <ul>
+                <li><a href="index.html">Bosh sahifa</a></li>
+                <li><a href="katalog.html">Katalog</a></li>
+                <li><a href="aloqa.html" aria-current="page">Aloqa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Aloqa va stol band qilish</h1>
+        </section>
+
+        <section class="asosiy-qism">
+            <article>
+                <h2>Stol band qilish formasi</h2>
+                <form id="band-qilish-formasi" action="#" method="post" novalidate>
+                    <div class="maydon">
+                        <label for="ism">Ism-familiya</label>
+                        <input type="text" id="ism" name="ism" placeholder="Masalan: Jasur Karimov">
+                        <span class="xato-matn" aria-live="polite"></span>
+                    </div>
+
+                    <div class="maydon">
+                        <label for="email">Elektron pochta</label>
+                        <input type="email" id="email" name="email" placeholder="jasur@mail.uz">
+                        <span class="xato-matn" aria-live="polite"></span>
+                    </div>
+
+                    <div class="maydon">
+                        <label for="telefon">Telefon raqam (+998XXXXXXXXX)</label>
+                        <input type="tel" id="telefon" name="telefon" placeholder="+998901234567">
+                        <span class="xato-matn" aria-live="polite"></span>
+                    </div>
+
+                    <div class="maydon">
+                        <label for="sana">Kelish sanasi</label>
+                        <input type="date" id="sana" name="sana">
+                        <span class="xato-matn" aria-live="polite"></span>
+                    </div>
+
+                    <div class="maydon">
+                        <label for="soni">Mehmonlar soni</label>
+                        <input type="number" id="soni" name="soni" min="1" max="40" value="2">
+                    </div>
+
+                    <div class="maydon">
+                        <label for="zal">Zal turi</label>
+                        <select id="zal" name="zal">
+                            <option value="umumiy">Umumiy zal</option>
+                            <option value="oilaviy">Oilaviy xona</option>
+                            <option value="ochiq">Ochiq maydon</option>
+                        </select>
+                    </div>
+
+                    <fieldset>
+                        <legend>Qaysi vaqtga?</legend>
+                        <div class="radio-qator">
+                            <label for="vaqt-tush"><input type="radio" id="vaqt-tush" name="vaqt" value="tush" checked> Tushlik (12:00–15:00)</label>
+                            <label for="vaqt-kech"><input type="radio" id="vaqt-kech" name="vaqt" value="kechki"> Kechki (18:00–22:00)</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="maydon">
+                        <label for="izoh">Qo'shimcha izoh (ixtiyoriy, 10–250 belgi)</label>
+                        <textarea id="izoh" name="izoh" rows="3" placeholder="Maxsus istaklar yoki savollaringiz..."></textarea>
+                        <span class="xato-matn" aria-live="polite"></span>
+                    </div>
+
+                    <button type="submit">Band qilish</button>
+                    <p id="forma-muvaffaqiyat" class="muvaffaqiyat-matn" aria-live="polite"></p>
+                </form>
+            </article>
+
+            <aside>
+                <h3>Ish vaqti</h3>
+                <p>Har kuni: 10:00 — 23:00</p>
+                <h3>Aloqa raqami</h3>
+                <p><a href="tel:+998901234567">+998 90 123 45 67</a></p>
+                <h3>Manzil</h3>
+                <p>Urganch shahri, Zarafshon ko'chasi</p>
+            </aside>
+        </section>
+    </main>
+
+    <script src="js/ui.js"></script>
+</body>
+</html>
